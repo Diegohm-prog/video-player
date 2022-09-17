@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Custom Video Player</title>
+  <style>
+    svg {
+      display: flex;
+      position: relative;
+    }
+
+    polygon,
+    rect {
+      fill: gray;
+    }
+
+    polygon:hover {
+      fill: green;
+    }
+
+    rect:hover {
+      fill: red;
+    }
+
+    polygon:active,
+    rect:active {
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+  <video src="log instagram 4x4.mp4" width="853" height="480" type="video/mp4" poster="library-mist.png">
+    <p>Your browser does not support web video but you can download the file <a href="log instagram 4x4.mp4">here</a>.
+    </p>
+  </video>
+
+  <svg width="550" height="150">
+    <polygon points="0,0 75,50 0,100" />
+    <rect rx="15" ry="15" x="50" y="50" width="100" height="100" />
+  </svg>
+
+  <script>
+    let myVideo = document.querySelector('video');
+    let playBtn = document.querySelector('polygon');
+    let pauseBtn = document.querySelector('rect');
+
+    function playVideo() {
+      myVideo.play();
+    }
+
+    function pauseVideo() {
+      myVideo.pause();
+    }
+
+    playBtn.addEventListener('click', playVideo);
+    pauseBtn.addEventListener('click', pauseVideo);
+  </script>
+</body>
+
+</html>
